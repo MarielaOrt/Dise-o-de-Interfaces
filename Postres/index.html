@@ -1,0 +1,268 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.9.1/font/bootstrap-icons.css">
+    <title>Postres del Mundo</title>
+    <link rel="stylesheet" href="imagenes">
+</head>
+<body>
+    <table class="table table-striped table-hover">
+        <thead>
+            <tr>
+                <th class="table-primary">Postre</th>
+                <th class="table-primary">Nombre</th>
+                <th class="table-primary">Pais</th>
+                <th class="table-primary">Receta</th>
+                <th class="table-primary">Opciones de compra</th>
+                <th class="table-primary">Añadir al carrito</th>
+            </tr>
+        </thead>
+        <tbody class="table-group-divider">
+            <tr>
+                <td> <figure class="figure"></figure>
+                    <img src="imagenes/dragon-beard.png" alt="" width="90px" height="90px">
+                </td>
+                 <td>Barba de dragón <br> "Ggultarae"</td>
+                 <td>Corea</td>
+                 <td><span class="badge text-bg-info" ><i style="color: aliceblue;" onclick="mensaje()">Receta Barba de dragón</i></span></td>
+                 <td><span class="badge text-bg-warning"><i class="bi bi-cash" style="font-size: 1rem"></i>Transferencia</span></td>
+                 <td>         
+                 <button class="btn btn-info">
+                    <i class="bi bi-cart-check" style="font-size: 1.5rem; color: aliceblue;"></i>
+                 </button>
+                 <button class="btn btn-danger">
+                    <i class="bi bi-cart-x" style="font-size: 1.5rem; color: aliceblue;"></i>
+                 </button>
+                </td>
+                 </td>
+             </tr>
+             
+             <tr>
+               <td> <figure class="figure"></figure>
+                   <img src="imagenes/gulam-jamun.png" alt="" width="90px" height="90px">
+               </td>
+                <td>Gulab jamun</td>
+                <td>Hindú</td>
+                <td><span class="badge text-bg-info" ><i style="color: aliceblue;" onclick="mensaje1()">Receta Gulab jamun</i></span></td>
+                <td><span class="badge text-bg-warning"><i class="bi bi-cash" style="font-size: 1rem"></i>Transferencia</span></td>
+                <td>
+                <button class="btn btn-info">
+                   <i class="bi bi-cart-check" style="font-size: 1.5rem; color: aliceblue;"></i>
+                </button>
+                <button class="btn btn-danger">
+                   <i class="bi bi-cart-x" style="font-size: 1.5rem; color: aliceblue;"></i>
+                </button>
+               </td>
+                </td>
+            </tr>
+
+            <tr>
+               <td> <figure class="figure"></figure>
+                   <img src="imagenes/pana-cota.jpg" alt="" width="90px" height="90px">
+               </td>
+                <td>Panacota</td>
+                <td>Italia</td>
+                <td><span class="badge text-bg-info" ><i style="color: aliceblue;" onclick="mensaje2()">Receta Panna Cotta</i></span></td>
+                <td><span class="badge text-bg-warning"><i class="bi bi-cash" style="font-size: 1rem"></i>Transferencia</span></td>
+                <td>
+                <button class="btn btn-info">
+                   <i class="bi bi-cart-check" style="font-size: 1.5rem; color: aliceblue;"></i>
+                </button>
+                <button class="btn btn-danger">
+                   <i class="bi bi-cart-x" style="font-size: 1.5rem; color: aliceblue;"></i>
+                </button>
+               </td>
+                </td>
+            </tr>
+
+            <tr>
+               <td> <figure class="figure"></figure>
+                   <img src="imagenes/pastel-de-coco.jpg" alt="" width="90px" height="90px">
+               </td>
+                <td>Pastel de coco</td>
+                <td>Estados Unidos</td>
+                <td><span class="badge text-bg-info" ><i style="color: aliceblue;" onclick="mensaje3()">Receta Pastel de coco</i></span></td>
+                <td><span class="badge text-bg-warning"><i class="bi bi-cash" style="font-size: 1rem"></i>Transferencia</span></td>
+                <td>
+                <button class="btn btn-info">
+                   <i class="bi bi-cart-check" style="font-size: 1.5rem; color: aliceblue;"></i>
+                </button>
+                <button class="btn btn-danger">
+                   <i class="bi bi-cart-x" style="font-size: 1.5rem; color: aliceblue;"></i>
+                </button>
+               </td>
+                </td>
+            </tr>
+
+            <tr>
+               <td> <figure class="figure"></figure>
+                   <img src="imagenes/pastel-de-tres-leches.jpg" alt="" width="90px" height="90px">
+               </td>
+                <td>Pastel de tres leches</td>
+                <td>Latinoamérica</td>
+                <td><span class="badge text-bg-info" ><i style="color: aliceblue;" onclick="mensaje4()">Receta Pastel de tres leches</i></span></td>
+                <td><span class="badge text-bg-warning"><i class="bi bi-currency-dollar" style="font-size: 1rem"></i>Transferencia</span></td>
+                <td>
+                <button class="btn btn-info">
+                   <i class="bi bi-cart-check" style="font-size: 1.5rem; color: aliceblue;"></i>
+                </button>
+                <button class="btn btn-danger">
+                   <i class="bi bi-cart-x" style="font-size: 1.5rem; color: aliceblue;"></i>
+                </button>
+               </td>
+                </td>
+            </tr>
+
+            <tr>
+               <td> <figure class="figure"></figure>
+                   <img src="imagenes/arroz-con-leche.jpg" alt="" width="90px" height="90px">
+               </td>
+                <td>Arroz con leche</td>
+                <td>El Salvador</td>
+                <td><span class="badge text-bg-info" ><i style="color: aliceblue;" onclick="mensaje5()">Receta Arroz con leche</i></span></td>
+                <td><span class="badge text-bg-warning"><i class="bi bi-cash" style="font-size: 1rem"></i>Transferencia</span></td>
+                <td>
+                <button class="btn btn-info">
+                   <i class="bi bi-cart-check" style="font-size: 1.5rem; color: aliceblue;"></i>
+                </button>
+                <button class="btn btn-danger">
+                   <i class="bi bi-cart-x" style="font-size: 1.5rem; color: aliceblue;"></i>
+                </button>
+               </td>
+                </td>
+            </tr>
+
+            </tr>
+        </tbody>
+        <tfoot>
+            <th>total</th>
+            <th></th>
+            <th></th>
+            <th></th>
+            <th>$$$$</th>
+            <th></th>
+        </tfoot>
+    </table>
+</body>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-OERcA2EqjJCMA+/3y+gxIOqMEjwtxJY7qPCqsdltbNJuaOe923+mo//f6V8Qbsw3" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+
+<script>
+            function mensaje() {
+         Swal.fire({
+         title: 'Receta Barba de dragón!',
+         text: 'Ingredientes para Barba de dragón',
+         imageUrl: 'https://rosagiselaolivisdegrayblog.files.wordpress.com/2017/11/rosa-gisela-olivis-de-gray-dulcerc3ada2.jpg',
+         imageWidth: 400,
+         imageHeight: 200,
+         imageAlt: 'Custom image',
+         html:
+         'Azúcar 500 gramos</br> Maltosa 500 gramos <br> agua 250 gramos <br>' +
+         'vinagre blanco ½ cucharadita <br> arina de maíz 100 gramos </br>',
+         focusConfirm: false,
+         confirmButtonText:
+         '<i class= "fa fa-thumbs-up"></i> OKi!'
+         })
+            }
+</script>
+
+        <script>
+            function mensaje1() {
+        Swal.fire({
+        title: 'Receta Gulab jamun!',
+        text: 'Gulab jamun',
+        imageUrl: 'https://okdiario.com/img/2015/12/31/receta-de-gulab-jamun.jpg',
+        imageWidth: 400,
+        imageHeight: 200,
+        imageAlt: 'Custom image',
+        html:
+        '1 taza de leche en polvo <br> 110 gr. de harina de trigo <br>' +
+        '¼ taza de leche entera </br> 50 gr de mantequilla <br> 500 ml de agua',
+        focusConfirm: false,
+        confirmButtonText:
+        '<i class= "fa fa-thumbs-up"></i> OKi!'
+        })
+            }
+        </script>
+
+        <script>
+            function mensaje2() {
+        Swal.fire({
+        title: 'Receta Panna Cotta!',
+        text: 'Panna Cotta',
+        imageUrl: 'https://recetinas.com/wp-content/uploads/2022/07/panna-cotta.jpg',
+        imageWidth: 400,
+        imageHeight: 200,
+        imageAlt: 'Custom image',
+        html:
+        '500 ml. de nata 35% m.g. (nata o crema de leche para montar) <br> 100 ml de leche entera <br> 100 g de azúcar blanquilla <br> 1 cucharada esencia vainilla o una vaina de vainilla <br>' +
+        '6 láminas de gelatina comestible tipo a 240º Bloom (12 g, 6 hojas para 1/2 litro de líquido) </br> 150 gr. de crema de queso suave <br> Para adornar, caramelo (al gusto) y sirope de fresas, también le va muy bien un coulis de frutos del bosque.',
+        focusConfirm: false,
+        confirmButtonText:
+        '<i class= "fa fa-thumbs-up"></i> OKi!'
+        })
+            }
+        </script>
+
+        <script>
+            function mensaje3() {
+        Swal.fire({
+        title: 'Receta Pastel de coco!',
+        text: 'Pastel de coco',
+        imageUrl: 'https://www.wiltonenespanol.com/wp-content/uploads/2021/04/CoCaHa_43162-07-scaled.jpg',
+        imageWidth: 400,
+        imageHeight: 200,
+        imageAlt: 'Custom image',
+        html:
+        '5 claras de huevo <br> ¾ taza de mantequilla a temperatura ambiente <br>' +
+        '1 ½ taza de azúcar refinada </br> 1 ½ cucharadita de esencia de vainilla <br> ½ taza de leche de coco',
+        focusConfirm: false,
+        confirmButtonText:
+        '<i class= "fa fa-thumbs-up"></i> OKi!'
+        })
+            }
+        </script>
+
+        <script>
+            function mensaje4() {
+        Swal.fire({
+        title: 'Receta Pastel de tres leches!',
+        text: 'Pastel de tres leches',
+        imageUrl: 'https://imagesvc.meredithcorp.io/v3/mm/image?url=https%3A%2F%2Fstatic.onecms.io%2Fwp-content%2Fuploads%2Fsites%2F21%2F2017%2F04%2F16%2Fpastel-de-tres-leches-2000.jpg&q=60',
+        imageWidth: 400,
+        imageHeight: 200,
+        imageAlt: 'Custom image',
+        html:
+        '1 1/2 tazas de harina <br> 1 cucharadita de polvo para hornear <br>' +
+        '1/2 taza de mantequilla sin sal </br> 1 taza de azúcar refinada <br> 5 huevos',
+        focusConfirm: false,
+        confirmButtonText:
+        '<i class= "fa fa-thumbs-up"></i> OKi!'
+        })
+            }
+        </script>
+
+        <script>
+            function mensaje5() {
+        Swal.fire({
+        title: 'Receta Arroz con leche!',
+        text: 'Arroz con leche',
+        imageUrl: 'https://www.cocinacaserayfacil.net/wp-content/uploads/2018/01/Arroz-con-leche.jpg',
+        imageWidth: 400,
+        imageHeight: 200,
+        imageAlt: 'Custom image',
+        html:
+        '4 tazas de agua <br> 2 ramitas de canela <br>' +
+        '1 taza arroz crudo </br> 2 Latas Leche Evaporada <br> 1 Taza Leche Condensada',
+        focusConfirm: false,
+        confirmButtonText:
+        '<i class= "fa fa-thumbs-up"></i> OKi!'
+        })
+            }
+        </script>
+
+</html>
