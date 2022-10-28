@@ -1,0 +1,293 @@
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <script src="js/bootstrap.js"></script>
+  <script src="https://kit.fontawesome.com/b375149b8e.js" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+  <link rel="stylesheet" href="css/style.css">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
+  <title>Registro</title>
+</head>
+
+      </div>
+    </div>
+  </nav>
+  <div class="box pinki-box">
+    <h2>Ingrese sus Datos</h2>
+    <img src="imagenes/usuario.png" alt="" width="180px" height="180px" >
+  <div class="container">
+    <br />
+    <div class="mb-3">
+      <label for="name" class="form-label"><i class="fa fa-building-o" aria-hidden="true"></i> Categoría</label>
+      <select class="form-control" id="categoria" required>
+        <option value="Individual">Individual</option>
+        <option value="Corporativo">Corporativo</option>        
+      </select>
+
+  </div>
+    <div class="mb-3">
+      <label for="name" class="form-label"><i class="fa fa-user-o" aria-hidden="true"></i> Nombres</label>
+      <input type="text" class="form-control" id="name" placeholder="Nombre" required>
+    </div>
+
+    <div class="mb-3">
+      <label for="lastname" class="form-label"><i class="fa fa-user-o" aria-hidden="true"></i> Apellidos</label>
+      <input type="text" class="form-control" id="lastname" placeholder="Apellido" required>
+    </div>
+
+    <div class="mb-3">
+      <label for="email" class="form-label"><i class="fa fa-envelope-o" aria-hidden="true"></i> Correo
+        Electrónico</label>
+      <input type="email" class="form-control" id="email" placeholder="Correo@gmail.com" required>
+    </div>
+
+    <div class="mb-3">
+      <label for="passwd" class="form-label"><i class="fa fa-dot-circle-o" aria-hidden="true"></i> Contraseña</label>
+      <input type="password" class="form-control" id="passwd" placeholder="*******" required>
+    </div>
+
+    <div class="mb-3">
+      <input class="form-check-input" type="checkbox" id="info" required>
+      <label class="form-check-label" for="info"> <i class="fa fa-clone" aria-hidden="true"></i> Desea recibir
+        información o publicidad de la empresa</label>
+    </div>
+
+    <div class="mb-3">
+      <input class="form-check-input" type="checkbox" id="terminos" required>
+      <label class="form-check-label" for="terminos"> <i class="fa fa-clone" aria-hidden="true"></i> Acepta los términos
+        de servicio</label>
+    </div>
+    <button class="btn btn-primary mb-3" onclick="guadar_localStorage();listar();">Regístrate</button>
+  </div>
+    <br />
+    <br />
+
+    <div class="box saturno-box"> 
+    <div class="alert alert-primary" role="alert">
+     <h3>Tabla de Registros de los Usuarios.</h3> 
+    </div>
+    <table class="table table-striped table-hover">
+      <thead>
+        <tr>
+          <th scope="col"><i class="fa fa-building" aria-hidden="true"></i> Categorías</th>
+          <th scope="col"><i class="fa fa-user" aria-hidden="true"></i> Nombres</th>
+          <th scope="col"><i class="fa fa-user" aria-hidden="true"></i> Apellidos</th>
+          <th scope="col"><i class="fa fa-envelope" aria-hidden="true"></i> Email</th>
+          <th scope="col"><i class="fa fa-lock" aria-hidden="true"></i> Password</th>
+          <th scope="col"><i class="fa fa-check-square" aria-hidden="true"></i> Información</th>
+          <th scope="col"><i class="fa fa-check-square" aria-hidden="true"></i> Términos</th>
+          <th scope="col"><i class="fa fa-trash" aria-hidden="true"></i> Eliminar</th>
+        </tr>
+      </thead>
+      <tbody id="listarclave">
+
+      </tbody>
+    </table>
+
+
+  </div>
+
+
+</div>
+<script type="text/javascript">
+
+	if ('WebSocket' in window) {
+		(function () {
+			function refreshCSS() {
+				var sheets = [].slice.call(document.getElementsByTagName("link"));
+				var head = document.getElementsByTagName("head")[0];
+				for (var i = 0; i < sheets.length; ++i) {
+					var elem = sheets[i];
+					var parent = elem.parentElement || head;
+					parent.removeChild(elem);
+					var rel = elem.rel;
+					if (elem.href && typeof rel != "string" || rel.length == 0 || rel.toLowerCase() == "stylesheet") {
+						var url = elem.href.replace(/(&|\?)_cacheOverride=\d+/, '');
+						elem.href = url + (url.indexOf('?') >= 0 ? '&' : '?') + '_cacheOverride=' + (new Date().valueOf());
+					}
+					parent.appendChild(elem);
+				}
+			}
+			var protocol = window.location.protocol === 'http:' ? 'ws://' : 'wss://';
+			var address = protocol + window.location.host + window.location.pathname + '/ws';
+			var socket = new WebSocket(address);
+			socket.onmessage = function (msg) {
+				if (msg.data == 'reload') window.location.reload();
+				else if (msg.data == 'refreshcss') refreshCSS();
+			};
+			if (sessionStorage && !sessionStorage.getItem('IsThisFirstTime_Log_From_LiveServer')) {
+				console.log('Live reload enabled.');
+				sessionStorage.setItem('IsThisFirstTime_Log_From_LiveServer', true);
+			}
+		})();
+	}
+	else {
+		console.error('Upgrade your browser. This Browser is NOT supported WebSocket for Live-Reloading.');
+	}
+	
+</script></body>
+<script>
+
+  function guadar_localStorage() {
+    var categoria = document.getElementById("categoria").value;
+    var name = document.getElementById("name").value;
+    var lastname = document.getElementById("lastname").value;
+    var email = document.getElementById("email").value;
+    var passwd = document.getElementById("passwd").value;
+    var info = document.getElementById("info").checked;
+    var terminos = document.getElementById("terminos").checked;
+
+    const registro_uusario = {
+      categoria:categoria,
+      name: name,
+      lastname: lastname,
+      email: email,
+      passwd: passwd,
+      info: info,
+      terminos: terminos,
+    };
+
+    if (
+      window.localStorage.getItem('r-' + email) !== undefined &&
+      window.localStorage.getItem('r-' + email)
+    ) {
+
+      Swal.fire({
+        icon: "error",
+        title: "Usuario ya registrado",
+        showConfirmButton: false,
+        timer: 1500,
+      });
+
+    } else {
+
+      if (name == "" || lastname == "" || email == "" || passwd == "" || terminos != true) {
+        Swal.fire({
+          icon: "error",
+          title: "Datos Solicitados",
+          showConfirmButton: false,
+          timer: 1500,
+        }).then((result) => {
+          setTimeout(function () {
+            if (document.getElementById('name')) {
+              document.getElementById('name').focus();
+            }
+          }, 1);
+        });
+
+      } else {
+        localStorage.setItem('r-' + email, JSON.stringify(registro_uusario));
+        categoria = document.getElementById("categoria").tabIndex = 0;
+        name = document.getElementById("name").value = "";
+        lastname = document.getElementById("lastname").value = "";
+        email = document.getElementById("email").value = "";
+        passwd = document.getElementById("passwd").value = "";
+        info = document.getElementById("info").checked = false;
+        terminos = document.getElementById("terminos").checked = false;
+
+        Swal.fire({
+          icon: "success",
+          title: "Los datos se almacenaron exitosamente",
+          showConfirmButton: false,
+          timer: 1500,
+        });
+
+      }
+    }
+  }
+
+
+  function listar() {
+
+    document.getElementById('listarclave').innerHTML = "";
+
+    for (x = 0, len = localStorage.length; x < len; x++) {
+      clave = localStorage.key(x);
+      if (clave.startsWith('r-')) {
+        value = localStorage[clave];
+        var data = JSON.parse(value);
+
+        var ele = document.getElementById('listarclave');
+        var tr = document.createElement('tr');
+        ele.appendChild(tr);
+
+        var td = document.createElement('td');
+        tr.appendChild(td);
+        var txt = document.createTextNode(data.categoria);
+        td.appendChild(txt);
+
+        var td = document.createElement('td');
+        tr.appendChild(td);
+        var txt = document.createTextNode(data.name);
+        td.appendChild(txt);
+
+        var td = document.createElement('td');
+        tr.appendChild(td);
+        var txt = document.createTextNode(data.lastname);
+        td.appendChild(txt);
+
+        var td = document.createElement('td');
+        tr.appendChild(td);
+        var txt = document.createTextNode(data.email);
+        td.appendChild(txt);
+
+        var td = document.createElement('td');
+        tr.appendChild(td);
+        var txt = document.createTextNode(data.passwd);
+        td.appendChild(txt);
+
+        var td = document.createElement('td');
+        tr.appendChild(td);
+        var txt = document.createTextNode(data.info);
+        td.appendChild(txt);
+
+        var td = document.createElement('td');
+        tr.appendChild(td);
+        var txt = document.createTextNode(data.terminos);
+        td.appendChild(txt);
+
+
+
+        var td = document.createElement('td');
+        tr.appendChild(td);
+        var a = document.createElement('a')
+        td.appendChild(a);
+        var linktext = document.createTextNode("🗑");
+        a.appendChild(linktext);
+        a.title = "Eliminar";
+        a.href = "javascript:eliminar(" + "'" + clave + "'" + ");";
+        a.id = "Eliminar";
+      }
+    }
+  }
+
+  function eliminar(keyeliminar) {
+
+    Swal.fire({
+      title: '¿Quiere eliminar los datos Ingresados?',
+      text: "!Este registro se eliminara!",
+      icon: 'warning',
+      showCancelButton: true,
+      confirmButtonColor: '#3085d6',
+      cancelButtonColor: '#d33',
+      confirmButtonText: 'Si, eliminarlo!'
+    }).then((result) => {
+      if (result.isConfirmed) {
+        window.localStorage.removeItem(keyeliminar);
+        listar();
+        Swal.fire(
+          'Eliminado!',
+          'El registro se elimino.',
+          'success'
+        )
+      }
+    })
+
+  }
+
+</script>
+
+</html>
